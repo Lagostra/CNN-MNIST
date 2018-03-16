@@ -87,7 +87,7 @@ def main(unused_argv):
     # Create the Estimator
     mnist_classifier = tf.estimator.Estimator(
         model_fn=cnn_model_fn,
-        model_dir='/tmp/mnist_convnet_model'
+        model_dir='/model/mnist_convnet_model'
     )
 
     # Set up logging for predictions
@@ -118,5 +118,5 @@ def main(unused_argv):
     eval_results = mnist_classifier.evaluate(input_fn=eval_input_fn)
     print(eval_results)
 
-if __main__ == '__main__':
+if __name__ == '__main__':
     tf.app.run()
